@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Фотогалерея торговых центров Твери — ТЦ Альтаир, ТЦ Капитал, ТОЦ Спутник. Фото помещений и интерьеров.">
+  <title>Фотогалерея — От собственника</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="main">
+    <!-- Hero Section -->
+    <section class="hero hero--small">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="../index.html" class="breadcrumbs__link">Главная</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">→</span>
+          <span class="breadcrumbs__current">Фотогалерея</span>
+        </nav>
+        <h1 class="hero__title">Фотогалерея</h1>
+        <p class="hero__subtitle">Посмотрите наши торговые центры изнутри</p>
+      </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="section">
+      <div class="container">
+        <div class="gallery-controls reveal">
+          <div class="filter-tabs" role="tablist" aria-label="Фильтр по объектам">
+            <button class="filter-tab is-active" data-filter="all" role="tab" aria-selected="true">Все</button>
+            <button class="filter-tab" data-filter="tver" role="tab" aria-selected="false">ТОЦ Тверь</button>
+            <button class="filter-tab" data-filter="altair" role="tab" aria-selected="false">ТЦ Альтаир</button>
+            <button class="filter-tab" data-filter="kapital" role="tab" aria-selected="false">ТЦ Капитал</button>
+            <button class="filter-tab" data-filter="sputnik" role="tab" aria-selected="false">ТОЦ Спутник</button>
+          </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div id="gallery-container" class="gallery-grid reveal">
+          <!-- Will be populated by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Gallery Modal -->
+  <div id="gallery-modal" class="gallery-modal" role="dialog" aria-modal="true" aria-label="Просмотр изображения" hidden>
+    <div class="gallery-modal__overlay" data-gallery-close></div>
+    <div class="gallery-modal__content">
+      <button class="gallery-modal__close" data-gallery-close aria-label="Закрыть">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <button class="gallery-modal__nav gallery-modal__nav--prev" data-gallery-prev aria-label="Предыдущее фото">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <div class="gallery-modal__image-wrap">
+        <div class="gallery-modal__placeholder" id="modal-placeholder-img">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+      </div>
+      <button class="gallery-modal__nav gallery-modal__nav--next" data-gallery-next aria-label="Следующее фото">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+      <div class="gallery-modal__info">
+        <h3 class="gallery-modal__title" id="modal-title"></h3>
+        <p class="gallery-modal__caption" id="modal-caption"></p>
+        <span class="gallery-modal__counter" id="modal-counter"></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <div id="modal-placeholder"></div>
+  <div id="toast-container"></div>
+  <div id="scroll-top-placeholder"></div>
+
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('gallery-container');
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const modal = document.getElementById('gallery-modal');
+      
+      if (!container || !window.APP_DATA) return;
+      
+      let allItems = [];
+      let filteredItems = [];
+      let currentIndex = 0;
+      
+      // Collect all gallery items
+      window.APP_DATA.centers.forEach(center => {
+        center.gallery.forEach((item, i) => {
+          allItems.push({
+            ...item,
+            centerId: center.id,
+            centerName: center.name
+          });
+        });
+      });
+      
+      filteredItems = [...allItems];
+      
+      function renderGallery(filter = 'all') {
+        filteredItems = filter === 'all' 
+          ? [...allItems] 
+          : allItems.filter(item => item.centerId === filter);
+        
+        container.innerHTML = filteredItems.map((item, i) => {
+          // Check if item has real photo
+          const hasRealPhoto = item.realPhoto;
+          const imgSrc = hasRealPhoto ? `../assets/img/${item.realPhoto}` : null;
+          
+          return `
+          <article class="gallery-item ${hasRealPhoto ? 'gallery-item--real' : ''}" data-index="${i}" tabindex="0" role="button" aria-label="Открыть ${item.title}">
+            ${hasRealPhoto ? `
+              <img src="${imgSrc}" alt="${item.title}" loading="lazy" class="gallery-item__image">
+            ` : `
+              <div class="gallery-item__placeholder gallery-item__placeholder--${item.placeholderType || 'interior'}">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+            `}
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__center">${item.centerName}</span>
+              <h3 class="gallery-item__title">${item.title}</h3>
+            </div>
+          </article>
+        `}).join('');
+        
+        // Add click handlers
+        container.querySelectorAll('.gallery-item').forEach(item => {
+          item.addEventListener('click', () => openModal(parseInt(item.dataset.index)));
+          item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openModal(parseInt(item.dataset.index));
+            }
+          });
+        });
+      }
+      
+      function openModal(index) {
+        currentIndex = index;
+        updateModal();
+        modal.hidden = false;
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        modal.querySelector('[data-gallery-close]').focus();
+      }
+      
+      function closeModal() {
+        modal.hidden = true;
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      
+      function updateModal() {
+        const item = filteredItems[currentIndex];
+        if (!item) return;
+        
+        const imageWrap = modal.querySelector('.gallery-modal__image-wrap');
+        
+        if (item.realPhoto) {
+          // Show real photo
+          const imgSrc = `../assets/img/${item.realPhoto}`;
+          imageWrap.innerHTML = `<img src="${imgSrc}" alt="${item.title}" class="gallery-modal__image">`;
+        } else {
+          // Show placeholder
+          imageWrap.innerHTML = `
+            <div class="gallery-modal__placeholder gallery-modal__placeholder--${item.placeholderType || 'interior'}" id="modal-placeholder-img">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+          `;
+        }
+        
+        document.getElementById('modal-title').textContent = item.title;
+        document.getElementById('modal-caption').textContent = item.caption || '';
+        document.getElementById('modal-counter').textContent = `${currentIndex + 1} / ${filteredItems.length}`;
+      }
+      
+      function navigate(dir) {
+        currentIndex = (currentIndex + dir + filteredItems.length) % filteredItems.length;
+        updateModal();
+      }
+      
+      // Event listeners
+      modal.querySelectorAll('[data-gallery-close]').forEach(btn => {
+        btn.addEventListener('click', closeModal);
+      });
+      
+      modal.querySelector('[data-gallery-prev]').addEventListener('click', () => navigate(-1));
+      modal.querySelector('[data-gallery-next]').addEventListener('click', () => navigate(1));
+      
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
+      });
+      
+      // Filter tabs
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          filterTabs.forEach(t => {
+            t.classList.remove('is-active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          this.classList.add('is-active');
+          this.setAttribute('aria-selected', 'true');
+          renderGallery(this.dataset.filter);
+        });
+      });
+      
+      // Initial render - check for URL filter parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialFilter = urlParams.get('filter') || 'all';
+      
+      // Activate the correct tab
+      filterTabs.forEach(tab => {
+        if (tab.dataset.filter === initialFilter) {
+          tab.classList.add('is-active');
+          tab.setAttribute('aria-selected', 'true');
+        } else {
+          tab.classList.remove('is-active');
+          tab.setAttribute('aria-selected', 'false');
+        }
+      });
+      
+      renderGallery(initialFilter);
+    });
+  </script>
+</body>
+</html>

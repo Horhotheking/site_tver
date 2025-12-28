@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Новости и статьи — аренда коммерческих помещений от собственника в Твери.">
+    <title>Новости — От собственника</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/data.js" defer></script>
+    <script src="../../assets/js/app.js" defer></script>
+</head>
+<body data-page="news">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Навигационная цепочка">
+                    <a href="../../index.html" class="breadcrumb__link">Главная</a>
+                    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                    <span class="breadcrumb__current" aria-current="page">Новости</span>
+                </nav>
+                <h1 id="page-title" class="page-hero__title">Новости и статьи</h1>
+                <p class="page-hero__subtitle">Актуальная информация о наших объектах и рынке коммерческой недвижимости</p>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="section" aria-labelledby="news-title">
+            <div class="container">
+                <h2 id="news-title" class="sr-only">Список новостей</h2>
+                <div id="news-container" class="news-grid reveal">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section--cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-block reveal">
+                    <h2 id="cta-title" class="cta-block__title">Интересует аренда?</h2>
+                    <p class="cta-block__text">Оставьте заявку и мы свяжемся с вами в ближайшее время</p>
+                    <button class="btn btn--primary btn--lg" data-modal-open aria-haspopup="dialog">Оставить заявку</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="modal-placeholder"></div>
+    <div id="toast-placeholder"></div>
+    <div id="scroll-top-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.renderNews === 'function' && window.APP_DATA) {
+                window.renderNews('news-container', window.APP_DATA.globalNews);
+            }
+        });
+    </script>
+</body>
+</html>

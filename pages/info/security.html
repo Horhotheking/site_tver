@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Безопасность в торговых центрах — видеонаблюдение, охрана, пожарная сигнализация.">
+    <title>Безопасность — От собственника</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/data.js" defer></script>
+    <script src="../../assets/js/app.js" defer></script>
+</head>
+<body data-page="security">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Навигационная цепочка">
+                    <a href="../../index.html" class="breadcrumb__link">Главная</a>
+                    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                    <span class="breadcrumb__current" aria-current="page">Безопасность</span>
+                </nav>
+                <h1 id="page-title" class="page-hero__title">Безопасность</h1>
+                <p class="page-hero__subtitle">Комплексная система охраны для защиты вашего бизнеса</p>
+            </div>
+        </section>
+
+        <!-- Security Features -->
+        <section class="section" aria-labelledby="features-title">
+            <div class="container">
+                <h2 id="features-title" class="sr-only">Системы безопасности</h2>
+                <div class="security-grid reveal">
+                    <div class="security-card">
+                        <div class="security-card__icon" id="sec-icon-1"></div>
+                        <h3 class="security-card__title">Круглосуточная охрана</h3>
+                        <p class="security-card__text">Профессиональная охрана ЧОП работает 24/7 во всех наших торговых центрах</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="security-card__icon" id="sec-icon-2"></div>
+                        <h3 class="security-card__title">Видеонаблюдение</h3>
+                        <p class="security-card__text">Современные камеры установлены внутри помещений и по всему периметру зданий</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="security-card__icon" id="sec-icon-3"></div>
+                        <h3 class="security-card__title">Пожарная сигнализация</h3>
+                        <p class="security-card__text">Автоматическая система обнаружения и оповещения о пожаре с выводом на пульт</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="security-card__icon" id="sec-icon-4"></div>
+                        <h3 class="security-card__title">Охранная сигнализация</h3>
+                        <p class="security-card__text">Датчики движения и контроля доступа с моментальным реагированием</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="security-card__icon" id="sec-icon-5"></div>
+                        <h3 class="security-card__title">Контроль доступа</h3>
+                        <p class="security-card__text">Система контроля входа и выхода для обеспечения безопасности арендаторов</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="security-card__icon" id="sec-icon-6"></div>
+                        <h3 class="security-card__title">Экстренная связь</h3>
+                        <p class="security-card__text">Прямая связь с охраной и экстренными службами из любой точки здания</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section--cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-block reveal">
+                    <h2 id="cta-title" class="cta-block__title">Остались вопросы?</h2>
+                    <p class="cta-block__text">Свяжитесь с нами для получения подробной информации о системах безопасности</p>
+                    <button class="btn btn--primary btn--lg" data-modal-open aria-haspopup="dialog">Задать вопрос</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <div id="modal-placeholder"></div>
+    <div id="toast-placeholder"></div>
+    <div id="scroll-top-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const icons = {
+                'sec-icon-1': 'security',
+                'sec-icon-2': 'camera',
+                'sec-icon-3': 'fire',
+                'sec-icon-4': 'security',
+                'sec-icon-5': 'access',
+                'sec-icon-6': 'phone'
+            };
+            Object.keys(icons).forEach(id => {
+                const el = document.getElementById(id);
+                if (el && typeof window.getIcon === 'function') {
+                    el.innerHTML = window.getIcon(icons[id]);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

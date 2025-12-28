@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ТОЦ Спутник — аренда коммерческих помещений от собственника в Твери. Адрес: пр-т Ленина, 35. Скидка 20% первый месяц.">
+    <title>ТОЦ Спутник — Аренда от собственника | Тверь</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/data.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Rent Banner -->
+    <div id="rent-banner" class="rent-banner">
+        <div class="rent-banner__content">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Скачать заявку на аренду</span>
+        </div>
+        <button class="rent-banner__close" aria-label="Закрыть">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+
+    <main>
+        <!-- Hero Slider -->
+        <section class="object-hero">
+            <div class="slider" id="hero-slider">
+                <div class="slider__container">
+                    <div class="slider__track">
+                        <div class="slider__slide">
+                            <img src="../assets/img/real/sputnik/sputnik-01.jpg" alt="ТОЦ Спутник - фасад" loading="lazy">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="../assets/img/real/sputnik/sputnik-02.jpg" loading="lazy" alt="Вход">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="../assets/img/real/sputnik/sputnik-03.jpg" loading="lazy" alt="Здание">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="../assets/img/real/sputnik/sputnik-04.jpg" loading="lazy" alt="Вывеска">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="../assets/img/real/sputnik/sputnik-05.jpg" loading="lazy" alt="Территория">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="../assets/img/real/sputnik/sputnik-06.jpg" loading="lazy" alt="Парковка">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="../assets/img/real/sputnik/sputnik-07.jpg" loading="lazy" alt="Общий вид">
+                        </div>
+                        <div class="slider__slide">
+                            <img src="../assets/img/real/sputnik/sputnik-08.jpg" loading="lazy" alt="Фасад">
+                        </div>
+                    </div>
+                    <button class="slider__nav slider__nav--prev" aria-label="Предыдущий слайд">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+                    </button>
+                    <button class="slider__nav slider__nav--next" aria-label="Следующий слайд">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,6 15,12 9,18"/></svg>
+                    </button>
+                    <div class="slider__counter">1 / 8</div>
+                </div>
+                <div class="slider__dots"></div>
+            </div>
+            
+            <div class="object-hero__overlay">
+                <div class="container">
+                    <div class="object-hero__badges">
+                        <span class="badge badge--success">-20% первый месяц</span>
+                        <span class="badge badge--glass">Арендные каникулы</span>
+                    </div>
+                    <h1 class="object-hero__title">ТОЦ «Спутник»</h1>
+                    <p class="object-hero__subtitle">пр-т Ленина, 35 • Тверь</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Info -->
+        <section class="quick-info">
+            <div class="container">
+                <div class="quick-info__grid">
+                    <div class="quick-info__item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <strong>Адрес</strong>
+                            <span>пр-т Ленина, 35</span>
+                        </div>
+                    </div>
+                    <div class="quick-info__item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                        <div>
+                            <strong>Режим работы</strong>
+                            <span>Неограничен</span>
+                        </div>
+                    </div>
+                    <div class="quick-info__item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <div>
+                            <strong>Телефон</strong>
+                            <span class="text-muted">Контакт уточняется</span>
+                        </div>
+                    </div>
+                    <div class="quick-info__item quick-info__item--cta">
+                        <button class="btn btn--primary" data-modal-open>Оставить заявку</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Super Perks -->
+        <section class="section" aria-labelledby="perks-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <h2 id="perks-title" class="section__title">Выгодные условия</h2>
+                    <p class="section__subtitle">Коммунальные платежи и электричество оплачивает собственник</p>
+                </div>
+                <div class="super-perks reveal">
+                    <div class="super-perk super-perk--primary">
+                        <div class="super-perk__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+                        </div>
+                        <h3>Скидка 20%</h3>
+                        <p>В первый месяц аренды</p>
+                    </div>
+                    <div class="super-perk super-perk--success">
+                        <div class="super-perk__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3>Коммуналка включена</h3>
+                        <p>Включая электричество</p>
+                    </div>
+                    <div class="super-perk super-perk--info">
+                        <div class="super-perk__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <h3>Арендные каникулы</h3>
+                        <p>На время ремонта</p>
+                    </div>
+                    <div class="super-perk super-perk--warning">
+                        <div class="super-perk__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10,17 15,12 10,7"/></svg>
+                        </div>
+                        <h3>Охрана + Свободный доступ</h3>
+                        <p>Круглосуточно</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Premises -->
+        <section id="premises" class="section section--alt" aria-labelledby="premises-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <h2 id="premises-title" class="section__title">Свободные помещения</h2>
+                    <p class="section__subtitle">Застеклённые помещения, готовые к заселению</p>
+                </div>
+                
+                <div class="premises-grid reveal">
+                    <div class="premise-card-full">
+                        <div class="premise-card-full__image">
+                            <img src="../assets/img/real/sputnik/sputnik-vacant-glass-entrance.jpg" alt="Помещение 3 м²" loading="lazy">
+                            <div class="premise-card-full__badges">
+                                <span class="badge badge--floor">1 этаж</span>
+                                <span class="badge badge--success">-20%</span>
+                            </div>
+                        </div>
+                        <div class="premise-card-full__info">
+                            <h3>3,0 м²</h3>
+                            <ul class="premise-features">
+                                <li>Застеклённое</li>
+                                <li>1 этаж</li>
+                                <li>Для островка / витрины</li>
+                            </ul>
+                            <div class="premise-card-full__note">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+                                Коммуналка включена
+                            </div>
+                            <button class="btn btn--primary btn--full" data-modal-open>Узнать цену</button>
+                        </div>
+                    </div>
+                    
+                    <div class="premise-card-full">
+                        <div class="premise-card-full__image">
+                            <img src="../assets/img/real/sputnik/sputnik-vacant-near-fixprice.jpg" alt="Помещение 12 м²" loading="lazy">
+                            <div class="premise-card-full__badges">
+                                <span class="badge badge--floor">1 этаж</span>
+                                <span class="badge badge--success">-20%</span>
+                            </div>
+                        </div>
+                        <div class="premise-card-full__info">
+                            <h3>12,0 м²</h3>
+                            <ul class="premise-features">
+                                <li>Застеклённое</li>
+                                <li>1 этаж</li>
+                                <li>Рядом с Fix Price</li>
+                            </ul>
+                            <div class="premise-card-full__note">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+                                Коммуналка включена
+                            </div>
+                            <button class="btn btn--primary btn--full" data-modal-open>Узнать цену</button>
+                        </div>
+                    </div>
+                    
+                    <div class="premise-card-full">
+                        <div class="premise-card-full__image">
+                            <img src="../assets/img/real/sputnik/sputnik-vacant-wide.jpg" alt="Помещение 23.6 м²" loading="lazy">
+                            <div class="premise-card-full__badges">
+                                <span class="badge badge--floor">2 этаж</span>
+                                <span class="badge badge--success">-20%</span>
+                            </div>
+                        </div>
+                        <div class="premise-card-full__info">
+                            <h3>23,6 м²</h3>
+                            <ul class="premise-features">
+                                <li>Застеклённое</li>
+                                <li>2 этаж</li>
+                                <li>Для офиса / студии</li>
+                            </ul>
+                            <div class="premise-card-full__note">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+                                Коммуналка включена
+                            </div>
+                            <button class="btn btn--primary btn--full" data-modal-open>Узнать цену</button>
+                        </div>
+                    </div>
+                    
+                    <div class="premise-card-full">
+                        <div class="premise-card-full__image">
+                            <img src="../assets/img/real/sputnik/sputnik-vacant-front-exterior.jpg" alt="Помещение 17.8 м²" loading="lazy">
+                            <div class="premise-card-full__badges">
+                                <span class="badge badge--floor">2 этаж</span>
+                                <span class="badge badge--success">-20%</span>
+                            </div>
+                        </div>
+                        <div class="premise-card-full__info">
+                            <h3>17,8 м²</h3>
+                            <ul class="premise-features">
+                                <li>Застеклённое</li>
+                                <li>2 этаж</li>
+                                <li>Отдельный вход</li>
+                            </ul>
+                            <div class="premise-card-full__note">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+                                Коммуналка включена
+                            </div>
+                            <button class="btn btn--primary btn--full" data-modal-open>Узнать цену</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section__note reveal">
+                    <p>Подходит под: офис, студию, магазин, салон, пункт выдачи и другое</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section id="photos" class="section section--alt" aria-labelledby="photos-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <h2 id="photos-title" class="section__title">Фотогалерея</h2>
+                    <p class="section__subtitle">Интерьеры и экстерьеры комплекса</p>
+                </div>
+                <div class="photo-grid reveal">
+                    <div class="photo-grid__item photo-grid__item--large">
+                        <img src="../assets/img/real/sputnik/sputnik-01.jpg" alt="Фасад ТОЦ Спутник" loading="lazy">
+                        <div class="photo-grid__overlay">
+                            <span class="photo-grid__label">Фасад здания</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        </div>
+                    </div>
+                    <div class="photo-grid__item">
+                        <img src="../assets/img/real/sputnik/sputnik-lobby-stairs.jpg" alt="Лобби" loading="lazy">
+                        <div class="photo-grid__overlay">
+                            <span class="photo-grid__label">Лобби</span>
+                        </div>
+                    </div>
+                    <div class="photo-grid__item">
+                        <img src="../assets/img/real/sputnik/sputnik-corridor-showcase.jpg" alt="Коридор" loading="lazy">
+                        <div class="photo-grid__overlay">
+                            <span class="photo-grid__label">Коридор</span>
+                        </div>
+                    </div>
+                    <div class="photo-grid__item">
+                        <img src="../assets/img/real/sputnik/sputnik-vacant-wide.jpg" alt="Помещение" loading="lazy">
+                        <div class="photo-grid__overlay">
+                            <span class="photo-grid__label">Помещение</span>
+                        </div>
+                    </div>
+                    <div class="photo-grid__item">
+                        <img src="../assets/img/real/sputnik/sputnik-vacant-glass-entrance.jpg" alt="Витрина" loading="lazy">
+                        <div class="photo-grid__overlay">
+                            <span class="photo-grid__label">Витрина</span>
+                        </div>
+                    </div>
+                    <div class="photo-grid__item photo-grid__item--wide">
+                        <img src="../assets/img/real/sputnik/sputnik-foodcourt.jpg" alt="Фудкорт" loading="lazy">
+                        <div class="photo-grid__overlay">
+                            <span class="photo-grid__label">Фудкорт</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section__footer reveal">
+                    <a href="gallery.html?filter=sputnik" class="btn btn--outline btn--lg">
+                        Все фото ТОЦ Спутник
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Traffic -->
+        <section class="section" aria-labelledby="traffic-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <h2 id="traffic-title" class="section__title">Первая линия и трафик</h2>
+                    <p class="section__subtitle">Интенсивный автомобильный и пешеходный трафик</p>
+                </div>
+                
+                <div class="traffic-grid reveal">
+                    <div class="traffic-card">
+                        <img src="../assets/img/real/sputnik/sputnik-street-busstop.jpg" alt="Остановка" loading="lazy">
+                        <div class="traffic-card__content">
+                            <h3>Остановка у входа</h3>
+                            <p>Автобусы и маршрутки останавливаются прямо у здания</p>
+                        </div>
+                    </div>
+                    <div class="traffic-card">
+                        <img src="../assets/img/real/sputnik/sputnik-street-view.jpg" alt="Трафик" loading="lazy">
+                        <div class="traffic-card__content">
+                            <h3>Интенсивный трафик</h3>
+                            <p>Одна из главных магистралей города</p>
+                        </div>
+                    </div>
+                    <div class="traffic-card">
+                        <img src="../assets/img/real/sputnik/sputnik-street-view-2.jpg" alt="Поток машин" loading="lazy">
+                        <div class="traffic-card__content">
+                            <h3>Постоянный поток</h3>
+                            <p>Высокая проходимость в течение всего дня</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tenants / Environment -->
+        <section class="section section--alt" aria-labelledby="tenants-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <h2 id="tenants-title" class="section__title">Арендаторы и окружение</h2>
+                    <p class="section__subtitle">Сильные якорные арендаторы обеспечивают трафик</p>
+                </div>
+                
+                <div class="tenant-showcase reveal">
+                    <div class="tenant-showcase__image">
+                        <img src="../assets/img/real/sputnik/sputnik-corridor-fixprice.jpg" alt="Fix Price в ТОЦ Спутник" loading="lazy">
+                    </div>
+                    <div class="tenant-showcase__info">
+                        <h3>Fix Price</h3>
+                        <p>Якорный арендатор с высоким трафиком. Магазин фиксированных цен привлекает постоянный поток покупателей.</p>
+                        <ul class="tenant-showcase__benefits">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+                                Генерирует трафик
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+                                Широкая аудитория
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg>
+                                Ежедневные посетители
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Advantages -->
+        <section class="section" aria-labelledby="advantages-title">
+            <div class="container">
+                <div class="section__header reveal">
+                    <h2 id="advantages-title" class="section__title">Все преимущества</h2>
+                </div>
+                
+                <div class="advantages-grid reveal">
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Первая линия, высокий трафик</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6v6"/><path d="M16 6v6"/><path d="M2 12h20"/><path d="M4 8h16V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V8"/></svg>
+                        <span>Рядом остановка транспорта</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
+                        <span>Бесплатная выделенная парковка</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                        <span>Пожарная и охранная сигнализация</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+                        <span>Приточно-вытяжная вентиляция</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>Круглосуточная охрана ЧОП</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <span>Видеонаблюдение внутри и снаружи</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                        <span>Интернет (несколько провайдеров)</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                        <span>Телефон</span>
+                    </div>
+                    <div class="advantage-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10,17 15,12 10,7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                        <span>Свободный доступ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section--cta">
+            <div class="container">
+                <div class="cta-block reveal">
+                    <div class="cta-block__content">
+                        <h2 class="cta-block__title">Позвоните — расскажем и покажем!</h2>
+                        <p class="cta-block__text">Подберём помещение под ваши задачи и проведём показ в удобное время</p>
+                    </div>
+                    <div class="cta-block__actions">
+                        <button class="btn btn--white btn--lg" data-modal-open>Оставить заявку</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 id="modal-title" class="modal__title">Заявка на ТОЦ Спутник</h2>
+                <button class="modal__close" data-modal-close aria-label="Закрыть">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <form id="modal-form" class="modal__form">
+                <div class="form-group">
+                    <label for="modal-name">Ваше имя *</label>
+                    <input type="text" id="modal-name" name="name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="modal-phone">Телефон *</label>
+                    <input type="tel" id="modal-phone" name="phone" required autocomplete="tel" placeholder="+7 (___) ___-__-__">
+                </div>
+                <div class="form-group">
+                    <label for="modal-area">Интересующая площадь</label>
+                    <select id="modal-area" name="area">
+                        <option value="">Выберите</option>
+                        <option value="3">3,0 м² (1 этаж)</option>
+                        <option value="12">12,0 м² (1 этаж)</option>
+                        <option value="17.8">17,8 м² (2 этаж)</option>
+                        <option value="23.6">23,6 м² (2 этаж)</option>
+                        <option value="other">Другая</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="modal-comment">Комментарий</label>
+                    <textarea id="modal-comment" name="comment" rows="3" placeholder="Опишите ваш бизнес"></textarea>
+                </div>
+                <input type="hidden" name="object" value="sputnik">
+                <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+                <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Наверх">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></svg>
+    </button>
+</body>
+</html>
