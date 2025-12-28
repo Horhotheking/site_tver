@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="schemeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#f1f5f9"/>
+    </linearGradient>
+    <pattern id="schemeGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#schemeBg)"/>
+  <rect width="100%" height="100%" fill="url(#schemeGrid)"/>
+  
+  <!-- Floor plan outline -->
+  <g transform="translate(100, 80)">
+    <!-- Main building outline -->
+    <rect x="0" y="0" width="600" height="340" rx="8" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8,4"/>
+    
+    <!-- Rooms/spaces -->
+    <g fill="#e2e8f0" stroke="#94a3b8" stroke-width="1">
+      <!-- Large spaces -->
+      <rect x="20" y="20" width="180" height="140" rx="4"/>
+      <rect x="220" y="20" width="160" height="140" rx="4"/>
+      <rect x="400" y="20" width="180" height="140" rx="4"/>
+      
+      <!-- Medium spaces -->
+      <rect x="20" y="180" width="120" height="140" rx="4"/>
+      <rect x="160" y="180" width="120" height="140" rx="4"/>
+      <rect x="300" y="180" width="140" height="140" rx="4"/>
+      <rect x="460" y="180" width="120" height="140" rx="4"/>
+    </g>
+    
+    <!-- Corridor -->
+    <rect x="0" y="160" width="600" height="20" fill="#cbd5e1" opacity="0.5"/>
+    
+    <!-- Room labels -->
+    <g font-family="system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      <text x="110" y="95">Пом. 101</text>
+      <text x="110" y="110">120 м²</text>
+      <text x="300" y="95">Пом. 102</text>
+      <text x="300" y="110">80 м²</text>
+      <text x="490" y="95">Пом. 103</text>
+      <text x="490" y="110">100 м²</text>
+      
+      <text x="80" y="255">Пом. 104</text>
+      <text x="80" y="270">45 м²</text>
+      <text x="220" y="255">Пом. 105</text>
+      <text x="220" y="270">50 м²</text>
+      <text x="370" y="255">Пом. 106</text>
+      <text x="370" y="270">65 м²</text>
+      <text x="520" y="255">Пом. 107</text>
+      <text x="520" y="270">55 м²</text>
+    </g>
+    
+    <!-- Entrance marker -->
+    <g transform="translate(300, 340)">
+      <polygon points="0,-15 15,0 -15,0" fill="#3b82f6"/>
+      <text y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#3b82f6">ВХОД</text>
+    </g>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(620, 430)">
+    <rect x="0" y="0" width="12" height="12" rx="2" fill="#e2e8f0" stroke="#94a3b8"/>
+    <text x="20" y="10" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Помещения</text>
+  </g>
+  
+  <!-- Placeholder notice -->
+  <g transform="translate(400, 460)">
+    <text text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" font-style="italic">
+      Схема — пример. Будет заменена на актуальную
+    </text>
+  </g>
+</svg>

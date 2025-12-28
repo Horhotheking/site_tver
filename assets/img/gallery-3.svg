@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g3wall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fafafa"/>
+      <stop offset="100%" style="stop-color:#f0f0f0"/>
+    </linearGradient>
+    <linearGradient id="g3floor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d1d5db"/>
+      <stop offset="100%" style="stop-color:#9ca3af"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Ceiling -->
+  <polygon points="0,0 400,0 350,50 50,50" fill="#f8fafc"/>
+  
+  <!-- Left wall -->
+  <polygon points="0,0 50,50 50,200 0,300" fill="url(#g3wall)"/>
+  
+  <!-- Right wall -->
+  <polygon points="400,0 350,50 350,200 400,300" fill="url(#g3wall)"/>
+  
+  <!-- Floor -->
+  <polygon points="50,200 350,200 400,300 0,300" fill="url(#g3floor)"/>
+  
+  <!-- Floor tiles -->
+  <g stroke="#a1a1aa" stroke-width="0.5" opacity="0.5">
+    <line x1="50" y1="200" x2="0" y2="300"/>
+    <line x1="125" y1="200" x2="100" y2="300"/>
+    <line x1="200" y1="200" x2="200" y2="300"/>
+    <line x1="275" y1="200" x2="300" y2="300"/>
+    <line x1="350" y1="200" x2="400" y2="300"/>
+  </g>
+  
+  <!-- Back wall/vanishing point -->
+  <rect x="50" y="50" width="300" height="150" fill="#e5e7eb"/>
+  
+  <!-- Doors on left -->
+  <g>
+    <rect x="5" y="60" width="35" height="80" fill="#1e40af" transform="skewY(15)"/>
+    <rect x="7" y="65" width="31" height="70" fill="#3b82f6" opacity="0.5" transform="skewY(15)"/>
+  </g>
+  <g>
+    <rect x="10" y="150" width="32" height="70" fill="#1e40af" transform="skewY(10)"/>
+    <rect x="12" y="154" width="28" height="62" fill="#3b82f6" opacity="0.5" transform="skewY(10)"/>
+  </g>
+  
+  <!-- Doors on right -->
+  <g>
+    <rect x="360" y="60" width="35" height="80" fill="#1e40af" transform="skewY(-15)"/>
+    <rect x="362" y="65" width="31" height="70" fill="#3b82f6" opacity="0.5" transform="skewY(-15)"/>
+  </g>
+  <g>
+    <rect x="358" y="150" width="32" height="70" fill="#1e40af" transform="skewY(-10)"/>
+    <rect x="360" y="154" width="28" height="62" fill="#3b82f6" opacity="0.5" transform="skewY(-10)"/>
+  </g>
+  
+  <!-- Ceiling lights -->
+  <g fill="#fef3c7" stroke="#f59e0b" stroke-width="1">
+    <rect x="170" y="30" width="60" height="10" rx="2"/>
+  </g>
+  <line x1="200" y1="40" x2="200" y2="50" stroke="#d4a500" stroke-width="2"/>
+  
+  <!-- Signs -->
+  <rect x="70" y="60" width="40" height="20" rx="2" fill="#10b981"/>
+  <text x="90" y="74" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="white">101</text>
+  
+  <rect x="290" y="60" width="40" height="20" rx="2" fill="#10b981"/>
+  <text x="310" y="74" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8" fill="white">102</text>
+  
+  <!-- Label -->
+  <rect x="0" y="270" width="400" height="30" fill="rgba(0,0,0,0.5)"/>
+  <text x="200" y="290" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="white">Коридор этажа</text>
+</svg>

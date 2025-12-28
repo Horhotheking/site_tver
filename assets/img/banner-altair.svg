@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="altGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <linearGradient id="altBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c4a6e"/>
+      <stop offset="50%" style="stop-color:#0369a1"/>
+      <stop offset="100%" style="stop-color:#0284c7"/>
+    </linearGradient>
+    
+    <linearGradient id="altAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#38bdf8"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    
+    <linearGradient id="altLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+    </linearGradient>
+    
+    <pattern id="altGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+    </pattern>
+    
+    <filter id="altNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#altBg)"/>
+  <rect width="100%" height="100%" fill="url(#altGrid)"/>
+  
+  <!-- Glow orbs -->
+  <g filter="url(#altGlow)">
+    <ellipse cx="150" cy="100" rx="150" ry="120" fill="#38bdf8" opacity="0.2"/>
+    <ellipse cx="500" cy="350" rx="180" ry="140" fill="#0ea5e9" opacity="0.15"/>
+  </g>
+  
+  <!-- Building illustration - modern style -->
+  <g transform="translate(150, 80)">
+    <!-- Main tower -->
+    <rect x="100" y="60" width="140" height="260" rx="6" fill="url(#altLight)"/>
+    <rect x="100" y="60" width="140" height="260" rx="6" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    
+    <!-- Windows with glow -->
+    <g fill="#38bdf8" opacity="0.7">
+      <rect x="115" y="80" width="30" height="35" rx="3"/>
+      <rect x="160" y="80" width="30" height="35" rx="3"/>
+      <rect x="205" y="80" width="20" height="35" rx="3"/>
+      
+      <rect x="115" y="130" width="30" height="35" rx="3"/>
+      <rect x="160" y="130" width="30" height="35" rx="3"/>
+      <rect x="205" y="130" width="20" height="35" rx="3"/>
+      
+      <rect x="115" y="180" width="30" height="35" rx="3"/>
+      <rect x="160" y="180" width="30" height="35" rx="3"/>
+      <rect x="205" y="180" width="20" height="35" rx="3"/>
+      
+      <rect x="115" y="230" width="30" height="35" rx="3"/>
+      <rect x="160" y="230" width="30" height="35" rx="3"/>
+      <rect x="205" y="230" width="20" height="35" rx="3"/>
+    </g>
+    
+    <!-- Roof accent -->
+    <rect x="95" y="50" width="150" height="15" rx="4" fill="url(#altAccent)"/>
+    <rect x="140" y="30" width="60" height="25" rx="4" fill="url(#altAccent)"/>
+    
+    <!-- Side wing -->
+    <rect x="240" y="140" width="80" height="180" rx="4" fill="url(#altLight)" opacity="0.7"/>
+    <g fill="#38bdf8" opacity="0.5">
+      <rect x="255" y="160" width="20" height="25" rx="2"/>
+      <rect x="290" y="160" width="20" height="25" rx="2"/>
+      <rect x="255" y="200" width="20" height="25" rx="2"/>
+      <rect x="290" y="200" width="20" height="25" rx="2"/>
+      <rect x="255" y="240" width="20" height="25" rx="2"/>
+      <rect x="290" y="240" width="20" height="25" rx="2"/>
+    </g>
+    
+    <!-- Left wing -->
+    <rect x="20" y="160" width="80" height="160" rx="4" fill="url(#altLight)" opacity="0.6"/>
+    <g fill="#38bdf8" opacity="0.4">
+      <rect x="35" y="180" width="20" height="25" rx="2"/>
+      <rect x="65" y="180" width="20" height="25" rx="2"/>
+      <rect x="35" y="220" width="20" height="25" rx="2"/>
+      <rect x="65" y="220" width="20" height="25" rx="2"/>
+      <rect x="35" y="260" width="20" height="25" rx="2"/>
+      <rect x="65" y="260" width="20" height="25" rx="2"/>
+    </g>
+  </g>
+  
+  <!-- Floating elements -->
+  <g>
+    <circle cx="80" cy="80" r="5" fill="#38bdf8" opacity="0.6"/>
+    <circle cx="530" cy="100" r="4" fill="#0ea5e9" opacity="0.5"/>
+    <circle cx="550" cy="60" r="6" fill="#38bdf8" opacity="0.4"/>
+    <rect x="60" y="300" width="12" height="12" rx="2" fill="#38bdf8" opacity="0.4" transform="rotate(45 66 306)"/>
+  </g>
+  
+  <!-- Label -->
+  <rect x="0" y="340" width="600" height="60" fill="rgba(0,0,0,0.4)"/>
+  <text x="300" y="378" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="white">ТЦ АЛЬТАИР</text>
+  
+  <!-- Noise overlay -->
+  <rect width="100%" height="100%" filter="url(#altNoise)" opacity="0.02"/>
+</svg>

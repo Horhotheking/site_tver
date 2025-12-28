@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="kapGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <linearGradient id="kapBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4c1d95"/>
+      <stop offset="50%" style="stop-color:#6d28d9"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    
+    <linearGradient id="kapAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    
+    <linearGradient id="kapLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+    </linearGradient>
+    
+    <pattern id="kapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#kapBg)"/>
+  <rect width="100%" height="100%" fill="url(#kapGrid)"/>
+  
+  <!-- Glow orbs -->
+  <g filter="url(#kapGlow)">
+    <ellipse cx="100" cy="350" rx="200" ry="150" fill="#a78bfa" opacity="0.2"/>
+    <ellipse cx="520" cy="80" rx="150" ry="120" fill="#8b5cf6" opacity="0.18"/>
+  </g>
+  
+  <!-- Building illustration -->
+  <g transform="translate(120, 60)">
+    <!-- Central tower -->
+    <rect x="120" y="40" width="120" height="280" rx="6" fill="url(#kapLight)"/>
+    <rect x="120" y="40" width="120" height="280" rx="6" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+    
+    <!-- Crown -->
+    <rect x="115" y="25" width="130" height="20" rx="4" fill="url(#kapAccent)"/>
+    <rect x="155" y="5" width="50" height="25" rx="4" fill="#a78bfa"/>
+    <polygon points="180,0 190,5 170,5" fill="#c4b5fd"/>
+    
+    <!-- Windows -->
+    <g fill="#a78bfa" opacity="0.7">
+      <rect x="135" y="60" width="25" height="30" rx="2"/>
+      <rect x="175" y="60" width="25" height="30" rx="2"/>
+      <rect x="215" y="60" width="15" height="30" rx="2"/>
+      
+      <rect x="135" y="105" width="25" height="30" rx="2"/>
+      <rect x="175" y="105" width="25" height="30" rx="2"/>
+      <rect x="215" y="105" width="15" height="30" rx="2"/>
+      
+      <rect x="135" y="150" width="25" height="30" rx="2"/>
+      <rect x="175" y="150" width="25" height="30" rx="2"/>
+      <rect x="215" y="150" width="15" height="30" rx="2"/>
+      
+      <rect x="135" y="195" width="25" height="30" rx="2"/>
+      <rect x="175" y="195" width="25" height="30" rx="2"/>
+      <rect x="215" y="195" width="15" height="30" rx="2"/>
+      
+      <rect x="135" y="240" width="25" height="30" rx="2"/>
+      <rect x="175" y="240" width="25" height="30" rx="2"/>
+      <rect x="215" y="240" width="15" height="30" rx="2"/>
+    </g>
+    
+    <!-- Left wing -->
+    <rect x="20" y="120" width="100" height="200" rx="4" fill="url(#kapLight)" opacity="0.7"/>
+    <g fill="#a78bfa" opacity="0.5">
+      <rect x="35" y="140" width="22" height="28" rx="2"/>
+      <rect x="70" y="140" width="22" height="28" rx="2"/>
+      <rect x="35" y="185" width="22" height="28" rx="2"/>
+      <rect x="70" y="185" width="22" height="28" rx="2"/>
+      <rect x="35" y="230" width="22" height="28" rx="2"/>
+      <rect x="70" y="230" width="22" height="28" rx="2"/>
+    </g>
+    
+    <!-- Right wing -->
+    <rect x="240" y="120" width="100" height="200" rx="4" fill="url(#kapLight)" opacity="0.7"/>
+    <g fill="#a78bfa" opacity="0.5">
+      <rect x="255" y="140" width="22" height="28" rx="2"/>
+      <rect x="290" y="140" width="22" height="28" rx="2"/>
+      <rect x="255" y="185" width="22" height="28" rx="2"/>
+      <rect x="290" y="185" width="22" height="28" rx="2"/>
+      <rect x="255" y="230" width="22" height="28" rx="2"/>
+      <rect x="290" y="230" width="22" height="28" rx="2"/>
+    </g>
+  </g>
+  
+  <!-- Floating elements -->
+  <circle cx="60" cy="60" r="6" fill="#a78bfa" opacity="0.5"/>
+  <circle cx="550" cy="300" r="5" fill="#8b5cf6" opacity="0.4"/>
+  <rect x="530" cy="150" width="14" height="14" rx="3" fill="#a78bfa" opacity="0.4" transform="rotate(30 537 157)"/>
+  
+  <!-- Label -->
+  <rect x="0" y="340" width="600" height="60" fill="rgba(0,0,0,0.4)"/>
+  <text x="300" y="378" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="white">ТЦ КАПИТАЛ</text>
+</svg>
